@@ -1,4 +1,4 @@
-<p align="center"><a href="https://t.me/kittuMusic_bot"><img src="https://github.com/Dacchusena/VeezMusic/raw/main/etc/veezlogo.png"></a></p>
+<p align="center"><a href="https://t.me/kittuMusic_bot"><img src="https://github.com/Dacchusena/VeezMusic/raw/main/etc/Polish_20211116_213504591.jpg"></a></p>
 <p align="center">
     <br><b>Veez Music is a telegram bot project that's allow you to play music on telegram voice chat group</b><br>
 </p>
