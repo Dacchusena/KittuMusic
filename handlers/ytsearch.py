@@ -26,7 +26,7 @@ async def ytsearch(_, message: Message):
         [
             [
                 InlineKeyboardButton(
-                    "🗑 Close", callback_data="close",
+                    "🗑 𝗖𝗹𝗼𝘀𝗲", callback_data="close",
                 )
             ]
         ]
@@ -34,18 +34,18 @@ async def ytsearch(_, message: Message):
     
     try:
         if len(message.command) < 2:
-            await message.reply_text("/search **needs an argument !**")
+            await message.reply_text("/search **𝗻𝗲𝗲𝗱𝘀 𝗮𝗻 𝗮𝗿𝗴𝘂𝗲𝗺𝗲𝗻𝘁 !**")
             return
         query = message.text.split(None, 1)[1]
-        m = await message.reply_text("🔎 **Searching...**")
+        m = await message.reply_text("🔎 **𝗦𝗲𝗮𝗿𝗰𝗵𝗶𝗻𝗴...**")
         results = YoutubeSearch(query, max_results=5).to_dict()
         i = 0
         text = ""
         while i < 5:
-            text += f"🏷 **Name:** __{results[i]['title']}__\n"
-            text += f"⏱ **Duration:** `{results[i]['duration']}`\n"
-            text += f"👀 **Views:** `{results[i]['views']}`\n"
-            text += f"📣 **Channel:** {results[i]['channel']}\n"
+            text += f"🏷 **𝗡𝗮𝗺𝗲:** __{results[i]['title']}__\n"
+            text += f"⏱ **𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻:** `{results[i]['duration']}`\n"
+            text += f"👀 **𝗩𝗶𝗲𝘄𝘀:** `{results[i]['views']}`\n"
+            text += f"📣 **𝗖𝗵𝗮𝗻𝗻𝗲𝗹:** {results[i]['channel']}\n"
             text += f"🔗: https://www.youtube.com{results[i]['url_suffix']}\n\n"
             i += 1
         await m.edit(text, reply_markup=keyboard, disable_web_page_preview=True)
