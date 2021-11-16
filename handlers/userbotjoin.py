@@ -18,7 +18,7 @@ async def join_group(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "• **i'm not have permission:**\n\n» ❌ __Add Users__",
+            "• **𝗜' 𝗵𝗮𝘃𝗲𝗻'𝘁 𝗽𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻:**\n\n» ❌ __Add Users__",
         )
         return
 
@@ -34,12 +34,12 @@ async def join_group(client, message):
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"🛑 Flood Wait Error 🛑 \n\n**userbot couldn't join your group due to heavy join requests for userbot**"
-            "\n\n**or add assistant manually to your Group and try again**",
+            f"🛑 𝗙𝗹𝗼𝗼𝗱 𝗪𝗮𝗶𝘁 𝗘𝗿𝗿𝗼𝗿 🛑 \n\n**𝗞𝗶𝘁𝘁𝘂 𝗖𝗮𝗻'𝘁 𝗷𝗼𝗶𝗻 𝘆𝗼𝘂𝗿 𝗴𝗿𝗼𝘂𝗽 𝗱𝘂𝗲 𝘁𝗼 𝗵𝗲𝗮𝘃𝘆 𝗷𝗼𝗶𝗻 𝗿𝗲𝗾𝘂𝗲𝘀𝘁𝘀**"
+            "\n\n**𝗼𝗿 𝗔𝗱𝗱 𝗞𝗶𝘁𝘁𝘂 𝗺𝗮𝗻𝘂𝗮𝗹𝗹𝘆 𝘁𝗼 𝘆𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽 𝗮𝗻𝗱 𝘁𝗿𝘆 𝗮𝗴𝗮𝗶𝗻**",
         )
         return
     await message.reply_text(
-        f"✅ **userbot succesfully entered chat**",
+        f"✅ **𝗞𝗶𝘁𝘁𝘂 𝗘𝗻𝘁𝗲𝗿𝗲𝗱 𝗬𝗼𝘂𝗿 𝗖𝗵𝗮𝘁 🐱**",
     )
 
 
@@ -67,20 +67,20 @@ async def leave_all(client, message):
 
     left = 0
     failed = 0
-    lol = await message.reply("🔄 **userbot** leaving all chats !")
+    lol = await message.reply("🔄 **𝘂𝘀𝗲𝗿𝗯𝗼𝘁** 𝗹𝗲𝗮𝘃𝗶𝗻𝗴 𝗮𝗹𝗹 𝗰𝗵𝗮𝘁𝘀 !")
     async for dialog in USER.iter_dialogs():
         try:
             await USER.leave_chat(dialog.chat.id)
             left += 1
             await lol.edit(
-                f"Userbot leaving all group...\n\nLeft: {left} chats.\nFailed: {failed} chats."
+                f"𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗹𝗲𝗮𝘃𝗶𝗻𝗴 𝗮𝗹𝗹 𝗴𝗿𝗼𝘂𝗽...\n\n𝗟𝗲𝗳𝘁: {left} 𝗰𝗵𝗮𝘁𝘀.\n𝗙𝗮𝗶𝗹𝗲𝗱: {failed} 𝗰𝗵𝗮𝘁𝘀."
             )
         except:
             failed += 1
             await lol.edit(
-                f"Userbot leaving...\n\nLeft: {left} chats.\nFailed: {failed} chats."
+                f"𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗹𝗲𝗮𝘃𝗶𝗻𝗴...\n\n𝗟𝗲𝗳𝘁: {left} 𝗰𝗵𝗮𝘁𝘀.\n𝗙𝗮𝗶𝗹𝗲𝗱: {failed} 𝗰𝗵𝗮𝘁𝘀."
             )
         await asyncio.sleep(0.7)
     await client.send_message(
-        message.chat.id, f"✅ Left from: {left} chats.\n❌ Failed in: {failed} chats."
+        message.chat.id, f"✅ 𝗟𝗲𝗳𝘁 𝗳𝗿𝗼𝗺: {left} 𝗰𝗵𝗮𝘁𝘀.\n❌ 𝗙𝗮𝗶𝗹𝗲𝗱 𝗶𝗻: {failed} 𝗰𝗵𝗮𝘁𝘀."
     )
