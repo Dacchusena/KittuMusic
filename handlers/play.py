@@ -133,19 +133,19 @@ async def playlist(client, message):
         return
     queue = que.get(message.chat.id)
     if not queue:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**")
     temp = []
     for t in queue:
         temp.append(t)
     now_playing = temp[0][0]
     by = temp[0][1].mention(style="md")
-    msg = "💡 **now playing** on {}".format(message.chat.title)
+    msg = "💡 **𝗡𝗼𝘄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴** on {}".format(message.chat.title)
     msg += "\n\n• " + now_playing
-    msg += "\n• Req By " + by
+    msg += "\n• 𝗥𝗲𝗾 𝗕𝘆 " + by
     temp.pop(0)
     if temp:
         msg += "\n\n"
-        msg += "🔖 **Queued Song:**"
+        msg += "🔖 **𝗤𝘂𝗲𝘂𝗲𝗱 𝗦𝗼𝗻𝗴:**"
         for song in temp:
             name = song[0]
             usr = song[1].mention(style="md")
@@ -177,15 +177,15 @@ def r_ply(type_):
     mar = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("⏹", "leave"),
-                InlineKeyboardButton("⏸", "puse"),
-                InlineKeyboardButton("▶️", "resume"),
-                InlineKeyboardButton("⏭", "skip"),
+                InlineKeyboardButton("⏹", "𝗹𝗲𝗮𝘃𝗲"),
+                InlineKeyboardButton("⏸", "𝗽𝘂𝘀𝗲"),
+                InlineKeyboardButton("▶️", "𝗿𝗲𝘀𝘂𝗺𝗲"),
+                InlineKeyboardButton("⏭", "𝘀𝗸𝗶𝗽"),
             ],
             [
-                InlineKeyboardButton("📖 PLAY-LIST", "playlist"),
+                InlineKeyboardButton("📖 𝗣𝗹𝗮𝘆-𝗹𝗶𝘀𝘁", "playlist"),
             ],
-            [InlineKeyboardButton("🗑 Close", "cls")],
+            [InlineKeyboardButton("🗑 𝗖𝗹𝗼𝘀𝗲", "cls")],
         ]
     )
     return mar
@@ -210,7 +210,7 @@ async def settings(client, message):
             await message.reply(stats, reply_markup=r_ply("play"))
     else:
         await message.reply(
-            "😕 **voice chat not found**\n\n» please turn on the voice chat first"
+            "😕 **𝗩𝗼𝗶𝗰𝗲 𝗰𝗵𝗮𝘁 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱**\n\n» 𝗽𝗹𝗲𝗮𝘀𝗲 𝘁𝘂𝗿𝗻 𝗼𝗻 𝘁𝗵𝗲 𝘃𝗼𝗶𝗰𝗲 𝗰𝗵𝗮𝘁 𝗳𝗶𝗿𝘀𝘁"
         )
 
 
@@ -237,19 +237,19 @@ async def music_onoff(_, message):
     if status in ("ON", "on", "On"):
         lel = await message.reply("`processing...`")
         if not message.chat.id in DISABLED_GROUPS:
-            await lel.edit("» **music player already turned on.**")
+            await lel.edit("» **𝗠𝘂𝘀𝗶𝗰 𝗽𝗹𝗮𝘆𝗲𝗿 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝘁𝘂𝗿𝗻𝗲𝗱 𝗼𝗻.**")
             return
         DISABLED_GROUPS.remove(message.chat.id)
-        await lel.edit(f"✅ **music player turned on**\n\n💬 `{message.chat.id}`")
+        await lel.edit(f"✅ **𝗠𝘂𝘀𝗶𝗰 𝗽𝗹𝗮𝘆𝗲𝗿 𝘁𝘂𝗿𝗻𝗲𝗱 𝗼𝗻**\n\n💬 `{message.chat.id}`")
 
     elif status in ("OFF", "off", "Off"):
         lel = await message.reply("`processing...`")
 
         if message.chat.id in DISABLED_GROUPS:
-            await lel.edit("» **music player already turned off.**")
+            await lel.edit("» **𝗠𝘂𝘀𝗶𝗰 𝗽𝗹𝗮𝘆𝗲𝗿 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝘁𝘂𝗿𝗻𝗲𝗱 𝗼𝗳𝗳.**")
             return
         DISABLED_GROUPS.append(message.chat.id)
-        await lel.edit(f"✅ **music player turned off**\n\n💬 `{message.chat.id}`")
+        await lel.edit(f"✅ **𝗠𝘂𝘀𝗶𝗰 𝗽𝗹𝗮𝘆𝗲𝗿 𝘁𝘂𝗿𝗻𝗲𝗱 𝗼𝗳𝗳**\n\n💬 `{message.chat.id}`")
     else:
         await message.reply_text(
             "**• usage:**\n\n `/music on` & `/music off`"
@@ -262,12 +262,12 @@ async def p_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("• Gʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("• 𝗚𝗿𝗼𝘂𝗽", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
-                    "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "• 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ],
-            [InlineKeyboardButton("🔙 Go Back", callback_data="menu")],
+            [InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="menu")],
         ]
     )
 
@@ -280,19 +280,19 @@ async def p_cb(b, cb):
     if type_ == "playlist":
         queue = que.get(cb.message.chat.id)
         if not queue:
-            await cb.message.edit("❌ **no music is currently playing**")
+            await cb.message.edit("❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**")
         temp = []
         for t in queue:
             temp.append(t)
         now_playing = temp[0][0]
         by = temp[0][1].mention(style="md")
-        msg = "💡 **now playing** on {}".format(cb.message.chat.title)
+        msg = "💡 **𝗡𝗼𝘄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴** on {}".format(cb.message.chat.title)
         msg += "\n\n• " + now_playing
-        msg += "\n• Req by " + by
+        msg += "\n• 𝗥𝗲𝗾 𝗕𝘆 " + by
         temp.pop(0)
         if temp:
             msg += "\n\n"
-            msg += "🔖 **Queued Song:**"
+            msg += "🔖 **𝗤𝘂𝗲𝘂𝗲𝗱 𝗦𝗼𝗻𝗴:**"
             for song in temp:
                 name = song[0]
                 usr = song[1].mention(style="md")
@@ -310,12 +310,12 @@ async def m_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("• Gʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("• 𝗚𝗿𝗼𝘂𝗽", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
-                    "• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "• 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ],
-            [InlineKeyboardButton("🔙 Go Back", callback_data="menu")],
+            [InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="menu")],
         ]
     )
 
@@ -422,15 +422,15 @@ async def m_cb(b, cb):
         marr = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏹", "leave"),
-                    InlineKeyboardButton("⏸", "puse"),
-                    InlineKeyboardButton("▶️", "resume"),
-                    InlineKeyboardButton("⏭", "skip"),
+                    InlineKeyboardButton("⏹", "𝗹𝗲𝗮𝘃𝗲"),
+                    InlineKeyboardButton("⏸", "𝗽𝘂𝘀𝗲"),
+                    InlineKeyboardButton("▶️", "𝗿𝗲𝘀𝘂𝗺𝗲"),
+                    InlineKeyboardButton("⏭", "𝘀𝗸𝗶𝗽"),
                 ],
                 [
-                    InlineKeyboardButton("📖 PLAY-LIST", "playlist"),
+                    InlineKeyboardButton("📖 𝗣𝗹𝗮𝘆-𝗹𝗶𝘀𝘁", "playlist"),
                 ],
-                [InlineKeyboardButton("🗑 Close", "cls")],
+                [InlineKeyboardButton("🗑 𝗖𝗹𝗼𝘀𝗲", "cls")],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
