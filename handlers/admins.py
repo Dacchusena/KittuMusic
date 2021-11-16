@@ -28,7 +28,7 @@ async def _(bot: Client, cmd: Message):
 
 # Back Button
 BACK_BUTTON = InlineKeyboardMarkup(
-    [[InlineKeyboardButton("🔙 Go Back", callback_data="cbback")]]
+    [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="cbback")]]
 )
 
 # @Client.on_message(filters.text & ~filters.private)
@@ -49,7 +49,7 @@ async def update_admin(client, message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "✅ Bot **reloaded correctly !**\n✅ **Admin list** has been **updated !**"
+        "✅ 𝗕𝗼𝘁 **𝗿𝗲𝗹𝗼𝗮𝗱𝗲𝗱 𝗰𝗼𝗿𝗿𝗲𝗰𝘁𝗹𝘆 !**\n✅ **𝗔𝗱𝗺𝗶𝗻 𝗹𝗶𝘀𝘁** 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 **𝘂𝗽𝗱𝗮𝘁𝗲𝗱 !**"
     )
 
 
@@ -59,19 +59,19 @@ async def update_admin(client, message):
 @authorized_users_only
 async def controlset(_, message: Message):
     await message.reply_text(
-        "💡 **here is the control menu of bot :**",
+        "💡 **𝗵𝗲𝗿𝗲 𝗶𝘀 𝘁𝗵𝗲 𝗰𝗼𝗻𝘁𝗿𝗼𝗹 𝗺𝗲𝗻𝘂 𝗼𝗳 𝗯𝗼𝘁 :**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏸ pause", callback_data="cbpause"),
-                    InlineKeyboardButton("▶️ resume", callback_data="cbresume"),
+                    InlineKeyboardButton("⏸ 𝗽𝗮𝘂𝘀𝗲", callback_data="cbpause"),
+                    InlineKeyboardButton("▶️ 𝗿𝗲𝘀𝘂𝗺𝗲", callback_data="cbresume"),
                 ],
                 [
-                    InlineKeyboardButton("⏩ skip", callback_data="cbskip"),
-                    InlineKeyboardButton("⏹ stop", callback_data="cbend"),
+                    InlineKeyboardButton("⏩ 𝘀𝗸𝗶𝗽", callback_data="cbskip"),
+                    InlineKeyboardButton("⏹ 𝘀𝘁𝗼𝗽", callback_data="cbend"),
                 ],
-                [InlineKeyboardButton("⛔ anti cmd", callback_data="cbdelcmds")],
-                [InlineKeyboardButton("🗑 Close", callback_data="close")],
+                [InlineKeyboardButton("⛔ 𝗮𝗻𝘁𝗶 𝗰𝗺𝗱", callback_data="cbdelcmds")],
+                [InlineKeyboardButton("🗑 𝗰𝗹𝗼𝘀𝗲", callback_data="close")],
             ]
         ),
     )
@@ -86,11 +86,11 @@ async def pause(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALL.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALL:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**")
     else:
         await callsmusic.pytgcalls.pause_stream(chat_id)
         await message.reply_text(
-            "⏸ **Track paused.**\n\n• **To resume the playback, use the**\n» /resume command."
+            "⏸ **𝗧𝗿𝗮𝗰𝗸 𝗽𝗮𝘂𝘀𝗲𝗱.**\n\n• **𝗧𝗼 𝗿𝗲𝘀𝘂𝗺𝗲 𝘁𝗵𝗲 𝗽𝗹𝗮𝘆𝗯𝗮𝗰𝗸, 𝘂𝘀𝗲 𝘁𝗵𝗲**\n» /resume 𝗰𝗼𝗺𝗺𝗮𝗻𝗱."
         )
 
 
@@ -103,11 +103,11 @@ async def resume(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALL.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALL:
-        await message.reply_text("❌ **no music is paused**")
+        await message.reply_text("❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗽𝗮𝘂𝘀𝗲𝗱**")
     else:
         await callsmusic.pytgcalls.resume_stream(chat_id)
         await message.reply_text(
-            "▶️ **Track resumed.**\n\n• **To pause the playback, use the**\n» /pause command."
+            "▶️ **𝗧𝗿𝗮𝗰𝗸 𝗿𝗲𝘀𝘂𝗺𝗲𝗱.**\n\n• **𝗧𝗼 𝗽𝗮𝘂𝘀𝗲 𝘁𝗵𝗲 𝗽𝗹𝗮𝘆𝗯𝗮𝗰𝗸, 𝘂𝘀𝗲 𝘁𝗵𝗲**\n» /pause 𝗰𝗼𝗺𝗺𝗮𝗻𝗱."
         )
 
 
@@ -120,14 +120,14 @@ async def stop(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALL.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALL:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**")
     else:
         try:
             queues.clear(chat_id)
         except QueueEmpty:
             pass
         await callsmusic.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text("✅ **music playback has ended**")
+        await message.reply_text("✅ **𝗺𝘂𝘀𝗶𝗰 𝗽𝗹𝗮𝘆𝗯𝗮𝗰𝗸 𝗵𝗮𝗱 𝗲𝗻𝗱𝗲𝗱**")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "next", f"next@{BOT_USERNAME}"]) & other_filters)
@@ -140,7 +140,7 @@ async def skip(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**")
     else:
         queues.task_done(chat_id)
         
@@ -161,7 +161,7 @@ async def skip(_, message: Message):
         qeue.pop(0)
     if not qeue:
         return
-    await message.reply_text("⏭ **You've skipped to the next song.**")
+    await message.reply_text("⏭ **𝗬𝗼𝘂'𝘃𝗲 𝘀𝗸𝗶𝗽𝗽𝗲𝗱 𝘁𝗼 𝘁𝗵𝗲 𝗻𝗲𝘅𝘁 𝘀𝗼𝗻𝗴.**")
 
 
 @Client.on_message(command(["auth", f"auth@{BOT_USERNAME}"]) & other_filters)
@@ -169,16 +169,16 @@ async def skip(_, message: Message):
 async def authenticate(client, message):
     global admins
     if not message.reply_to_message:
-        return await message.reply("💡 reply to message to authorize user !")
+        return await message.reply("💡 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘁𝗼 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘀𝗲 𝘂𝘀𝗲𝗿 !")
     if message.reply_to_message.from_user.id not in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.append(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
         await message.reply(
-            "🟢 user authorized.\n\nfrom now on, that's user can use the admin commands."
+            "🟢 𝘂𝘀𝗲𝗿 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘀𝗲𝗱.\n\n𝗳𝗿𝗼𝗺 𝗻𝗼𝘄 𝗼𝗻, 𝘁𝗵𝗮𝘁'𝘀 𝘂𝘀𝗲𝗿 𝗰𝗮𝗻 𝘂𝘀𝗲 𝘁𝗵𝗲 𝗮𝗱𝗺𝗶𝗻 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀."
         )
     else:
-        await message.reply("✅ user already authorized!")
+        await message.reply("✅ 𝘂𝘀𝗲𝗿 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘀𝗲𝗱!")
 
 
 @Client.on_message(command(["unauth", f"deauth@{BOT_USERNAME}"]) & other_filters)
@@ -186,16 +186,16 @@ async def authenticate(client, message):
 async def deautenticate(client, message):
     global admins
     if not message.reply_to_message:
-        return await message.reply("💡 reply to message to deauthorize user !")
+        return await message.reply("💡 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘁𝗼 𝗱𝗲𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘀𝗲 𝘂𝘀𝗲𝗿 !")
     if message.reply_to_message.from_user.id in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.remove(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
         await message.reply(
-            "🔴 user deauthorized.\n\nfrom now that's user can't use the admin commands."
+            "🔴 𝘂𝘀𝗲𝗿 𝗱𝗲𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘀𝗲𝗱.\n\n𝗳𝗿𝗼𝗺 𝗻𝗼𝘄 𝘁𝗵𝗮𝘁'𝘀 𝘂𝘀𝗲𝗿 𝗰𝗮𝗻'𝘁 𝘂𝘀𝗲 𝘁𝗵𝗲 𝗮𝗱𝗺𝗶𝗻 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀."
         )
     else:
-        await message.reply("✅ user already deauthorized!")
+        await message.reply("✅ 𝘂𝘀𝗲𝗿 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝗱𝗲𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘀𝗲𝗱!")
 
 
 # this is a anti cmd feature
@@ -204,7 +204,7 @@ async def deautenticate(client, message):
 async def delcmdc(_, message: Message):
     if len(message.command) != 2:
         return await message.reply_text(
-            "read the /help message to know how to use this command"
+            "𝗿𝗲𝗮𝗱 𝘁𝗵𝗲 /help 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘁𝗼 𝗸𝗻𝗼𝘄 𝗵𝗼𝘄 𝘁𝗼 𝘂𝘀𝗲 𝘁𝗵𝗶𝘀 𝗰𝗼𝗺𝗺𝗮𝗻𝗱"
         )
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
@@ -213,13 +213,13 @@ async def delcmdc(_, message: Message):
         if await delcmd_is_on(message.chat.id):
             return await message.reply_text("✅ already activated")
         await delcmd_on(chat_id)
-        await message.reply_text("🟢 activated successfully")
+        await message.reply_text("🟢 𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆")
     elif status == "off":
         await delcmd_off(chat_id)
-        await message.reply_text("🔴 disabled successfully")
+        await message.reply_text("🔴 𝗗𝗶𝘀𝗮𝗯𝗹𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆")
     else:
         await message.reply_text(
-            "read the /help message to know how to use this command"
+            "𝗿𝗲𝗮𝗱 𝘁𝗵𝗲 /help 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝘁𝗼 𝗸𝗻𝗼𝘄 𝗵𝗼𝘄 𝘁𝗼 𝘂𝘀𝗲 𝘁𝗵𝗶𝘀 𝗰𝗼𝗺𝗺𝗮𝗻𝗱"
         )
 
 
@@ -230,19 +230,19 @@ async def delcmdc(_, message: Message):
 async def cbpause(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin can tap this button !", show_alert=True)
+        return await query.answer("💡 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻 𝗰𝗮𝗻 𝘁𝗮𝗽 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 !", show_alert=True)
     chat_id = get_chat_id(query.message.chat)
     ACTV_CALL = []
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALL.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALL:
         await query.edit_message_text(
-            "❌ **no music is currently playing**", reply_markup=BACK_BUTTON
+            "❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**", reply_markup=BACK_BUTTON
         )
     else:
         await callsmusic.pytgcalls.pause_stream(chat_id)
         await query.edit_message_text(
-            "⏸ music playback has been paused", reply_markup=BACK_BUTTON
+            "⏸ 𝗺𝘂𝘀𝗶𝗰 𝗽𝗹𝗮𝘆𝗯𝗮𝗰𝗸 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗽𝗮𝘂𝘀𝗲𝗱", reply_markup=BACK_BUTTON
         )
 
 
@@ -250,19 +250,19 @@ async def cbpause(_, query: CallbackQuery):
 async def cbresume(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin can tap this button !", show_alert=True)
+        return await query.answer("💡 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻 𝗰𝗮𝗻 𝘁𝗮𝗽 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 !", show_alert=True)
     chat_id = get_chat_id(query.message.chat)
     ACTV_CALL = []
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALL.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALL:
         await query.edit_message_text(
-            "❌ **no music is paused**", reply_markup=BACK_BUTTON
+            "❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗽𝗮𝘂𝘀𝗲𝗱**", reply_markup=BACK_BUTTON
         )
     else:
         await callsmusic.pytgcalls.resume_stream(chat_id)
         await query.edit_message_text(
-            "▶️ music playback has been resumed", reply_markup=BACK_BUTTON
+            "▶️ 𝗺𝘂𝘀𝗶𝗰 𝗽𝗹𝗮𝘆𝗯𝗮𝗰𝗸 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗿𝗲𝘀𝘂𝗺𝗲𝗱", reply_markup=BACK_BUTTON
         )
 
 
@@ -270,14 +270,14 @@ async def cbresume(_, query: CallbackQuery):
 async def cbend(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin can tap this button !", show_alert=True)
+        return await query.answer("💡 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻 𝗰𝗮𝗻 𝘁𝗮𝗽 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 !", show_alert=True)
     chat_id = get_chat_id(query.message.chat)
     ACTV_CALL = []
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALL.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALL:
         await query.edit_message_text(
-            "❌ **no music is currently playing**", reply_markup=BACK_BUTTON
+            "❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**", reply_markup=BACK_BUTTON
         )
     else:
         try:
@@ -287,7 +287,7 @@ async def cbend(_, query: CallbackQuery):
         
         await callsmusic.pytgcalls.leave_group_call(chat_id)
         await query.edit_message_text(
-            "✅ the music queue has been cleared and successfully left voice chat",
+            "✅ 𝘁𝗵𝗲 𝗺𝘂𝘀𝗶𝗰 𝗾𝘂𝗲𝘂𝗲 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗰𝗹𝗲𝗮𝗿𝗲𝗱 𝗮𝗻𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗹𝗲𝗳𝘁 𝘃𝗼𝗶𝗰𝗲 𝗰𝗵𝗮𝘁",
             reply_markup=BACK_BUTTON,
         )
 
@@ -297,14 +297,14 @@ async def cbskip(_, query: CallbackQuery):
     global que
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin can tap this button !", show_alert=True)
+        return await query.answer("💡 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻𝘀 𝗰𝗮𝗻 𝘁𝗮𝗽 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 !", show_alert=True)
     chat_id = get_chat_id(query.message.chat)
     ACTV_CALLS = []
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
         await query.edit_message_text(
-            "❌ **no music is currently playing**", reply_markup=BACK_BUTTON
+            "❌ **𝗻𝗼 𝗺𝘂𝘀𝗶𝗰 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝗽𝗹𝗮𝘆𝗶𝗻𝗴**", reply_markup=BACK_BUTTON
         )
     else:
         queues.task_done(chat_id)
@@ -327,7 +327,7 @@ async def cbskip(_, query: CallbackQuery):
     if not qeue:
         return
     await query.edit_message_text(
-        "⏭ **You've skipped to the next song**", reply_markup=BACK_BUTTON
+        "⏭ **𝗬𝗼𝘂'𝘃𝗲 𝘀𝗸𝗶𝗽𝗽𝗲𝗱 𝘁𝗼 𝘁𝗵𝗲 𝗻𝗲𝘅𝘁 𝘀𝗼𝗻𝗴**", reply_markup=BACK_BUTTON
     )
 
 
@@ -338,6 +338,6 @@ async def change_volume(client, message):
     chat_id = message.chat.id
     try:
        await callsmusic.pytgcalls.change_volume_call(chat_id, volume=int(range))
-       await message.reply(f"✅ **volume set to:** ```{range}%```")
+       await message.reply(f"✅ **𝘃𝗼𝗹𝘂𝗺𝗲 𝘀𝗲𝘁 𝘁𝗼:** ```{range}%```")
     except Exception as e:
        await message.reply(f"**error:** {e}")
