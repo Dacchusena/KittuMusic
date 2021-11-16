@@ -25,7 +25,7 @@ async def handle_user_status(bot, cmd):
         await db.add_user(chat_id)
         await bot.send_message(
             LOG_CHANNEL,
-            f"**📣 bot notification.** \n\n#NEW_USER **start use your bot!** \n\n🏷 name: `{cmd.from_user.first_name}` \n📮 user id: `{cmd.from_user.id}` \n🙋‍♂ profile: [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id})",
+            f"**📣 𝗕𝗼𝘁 𝗡𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻.** \n\n#NEW_USER **start use your bot!** \n\n🏷 name: `{cmd.from_user.first_name}` \n📮 user id: `{cmd.from_user.id}` \n🙋‍♂ profile: [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id})",
         )
 
     ban_status = await db.get_ban_status(chat_id)
@@ -76,7 +76,7 @@ async def main_broadcast_handler(m, db):
         if not broadcast_ids.get(broadcast_id):
             break
     out = await m.reply_text(
-        text="**💡 broadcast started...**\n\n**» when it's done, you'll be notified here !**"
+        text="**💡 𝗯𝗿𝗼𝗮𝗱𝗰𝗮𝘀𝘁 𝘀𝘁𝗮𝗿𝘁𝗲𝗱...**\n\n**» when it's done, you'll be notified here !**"
     )
 
     start_time = time.time()
@@ -112,13 +112,13 @@ async def main_broadcast_handler(m, db):
     await out.delete()
     if failed == 0:
         await m.reply_text(
-            text=f"✅ Broadcasting completed! \n**Completed in:** `{completed_in}` \n\n**Total users:** `{total_users}` \n**Total done:** `{done}` \n**Total success:** `{success}` \n**Total failed:** `{failed}`",
+            text=f"✅ 𝗕𝗿𝗼𝗮𝗱𝗰𝗮𝘀𝘁𝗶𝗻𝗴 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱! \n**𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱 𝗶𝗻:** `{completed_in}` \n\n**𝗧𝗼𝘁𝗮𝗹 𝘂𝘀𝗲𝗿𝘀:** `{total_users}` \n**𝗧𝗼𝘁𝗮𝗹 𝗱𝗼𝗻𝗲:** `{done}` \n**𝗧𝗼𝘁𝗮𝗹 𝘀𝘂𝗰𝗰𝗲𝘀𝘀:** `{success}` \n**𝗧𝗼𝘁𝗮𝗹 𝗳𝗮𝗶𝗹𝗲𝗱:** `{failed}`",
             quote=True,
         )
     else:
         await m.reply_document(
             document="broadcast-logs.txt",
-            caption=f"✅ Broadcasting completed! \n**Completed in:** `{completed_in}`\n\n**Total users:** `{total_users}` \n**Total done:** `{done}` \n**Total success:** `{success}` \n**Total failed:** `{failed}`",
+            caption=f"✅ 𝗕𝗿𝗼𝗮𝗱𝗰𝗮𝘀𝘁𝗶𝗻𝗴 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱! \n**𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱 𝗶𝗻:** `{completed_in}`\n\n**𝗧𝗼𝘁𝗮𝗹 𝘂𝘀𝗲𝗿𝘀:** `{total_users}` \n**𝗧𝗼𝘁𝗮𝗹 𝗱𝗼𝗻𝗲:** `{done}` \n**𝗧𝗼𝘁𝗮𝗹 𝘀𝘂𝗰𝗰𝗲𝘀𝘀:** `{success}` \n**𝗧𝗼𝘁𝗮𝗹 𝗳𝗮𝗶𝗹𝗲𝗱:** `{failed}`",
             quote=True,
         )
     os.remove("broadcast-logs.txt")
