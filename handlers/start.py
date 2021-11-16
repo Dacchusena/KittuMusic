@@ -69,11 +69,11 @@ async def start_private(client: Client, message: Message):
                 [InlineKeyboardButton("❓ 𝗕𝗮𝘀𝗶𝗰 𝗚𝘂𝗶𝗱𝗲", callback_data="cbhowtouse")],
                 [
                     InlineKeyboardButton("📚 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤️ 𝗗𝗼𝗻𝗮𝘁𝗲", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("🍻 𝗗𝗼𝗻𝗮𝘁𝗲", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗚𝗿𝗼𝘂𝗽", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "✌️ 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗚𝗿𝗼𝘂𝗽", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
                         "📣 𝗨𝗽𝗱𝗮𝘁𝗲𝘀", url=f"https://t.me/{UPDATES_CHANNEL}"
@@ -81,7 +81,7 @@ async def start_private(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 𝗢𝘄𝗻𝗲𝗿", url="https://t.me/XDacchuX"
+                        "👻 𝗢𝘄𝗻𝗲𝗿", url="https://t.me/XDacchuX"
                     )
                 ],
             ]
