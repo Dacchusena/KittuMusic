@@ -52,7 +52,7 @@ async def _human_time_duration(seconds):
 )
 async def start_private(client: Client, message: Message):
     await message.reply_text(
-        f""" **Welcome [🤗](https://telegra.ph/file/2c0deee1097a8dab6bab5.jpg) {message.from_user.mention()} !**\n
+        f"""👻 **Welcome [🤗](https://telegra.ph/file/2c0deee1097a8dab6bab5.jpg) {message.from_user.mention()} !**\n
 💭 **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) allows you to play music on groups through the new Telegram's voice chats!**
 
 💡 **Find out all the Bot's commands and how they work by clicking on the » 📚 Commands button!**
@@ -122,7 +122,7 @@ async def start_group(client: Client, message: Message):
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
-        f"""✨ **Hello** {message.from_user.mention()} !
+        f"""👻 **Welcome** {message.from_user.mention()} !
 
 » **press the button below to read the explanation and see the list of available commands !**
 
