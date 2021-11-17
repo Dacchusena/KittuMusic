@@ -16,7 +16,7 @@ from config import (
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""✨ **Welcome [🤗](https://telegra.ph/file/2c0deee1097a8dab6bab5.jpg)[{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
+        f"""✨ **Welcome [👻](https://telegra.ph/file/2c0deee1097a8dab6bab5.jpg)[{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
 💭 **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) allows you to play music on groups through the new Telegram's voice chats!**
 
 💡 **Find out all the Bot's commands and how they work by clicking on the » 📚 Commands button!**
