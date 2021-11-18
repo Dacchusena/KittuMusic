@@ -37,7 +37,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        " 𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
                         "📣 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"https://t.me/{UPDATES_CHANNEL}"
@@ -45,7 +45,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        "𝗔𝗱𝗱 𝗠𝗲", url="https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "𝗔𝗱𝗱 𝗠𝗲", url="https://t.me/Kittumusicbot?startgroup=true"
                     )
                 ],
             ]
