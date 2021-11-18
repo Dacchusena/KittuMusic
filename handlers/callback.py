@@ -26,18 +26,18 @@ async def cbstart(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽 ➕",
-                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+                        "𝗡𝗲𝘁𝘄𝗼𝗿𝗸",
+                        url=f"https://t.me/Raze_Network",
                     )
                 ],
                 [InlineKeyboardButton("❓ 𝗕𝗮𝘀𝗶𝗰 𝗚𝘂𝗶𝗱𝗲", callback_data="cbhowtouse")],
                 [
                     InlineKeyboardButton("📚 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀", callback_data="cbcmds"),
-                    InlineKeyboardButton("🍻 𝗗𝗼𝗻𝗮𝘁𝗲", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("🥃 𝗢𝘄𝗻𝗲𝗿", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
-                        " ✌️𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗚𝗿𝗼𝘂𝗽", url=f"https://t.me/{GROUP_SUPPORT}"
+                        " 𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
                         "📣 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"https://t.me/{UPDATES_CHANNEL}"
@@ -45,7 +45,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        "👻 𝗢𝘄𝗻𝗲𝗿", url="https://t.me/XDacchuX"
+                        "𝗔𝗱𝗱 𝗠𝗲", url="https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
             ]
