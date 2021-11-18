@@ -73,7 +73,7 @@ async def start_private(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "✌️ 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗚𝗿𝗼𝘂𝗽", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "𝗦𝘂𝗽𝗽𝗼𝗿𝘁", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
                         "📣 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=f"https://t.me/{UPDATES_CHANNEL}"
@@ -81,7 +81,7 @@ async def start_private(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "𝗔𝗱𝗱 𝗠𝗲", url="https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "𝗔𝗱𝗱 𝗠𝗲", url="https://t.me/kittumusicbot?startgroup=true"
                     )
                 ],
             ]
